@@ -16,6 +16,8 @@ class AppColors{
   static Color darker = const Color.fromRGBO(0, 54, 71, 1);
 }
 
+
+
 class AppIcons{
   //Logo
   static Image logo = Image.asset('assets/Logo.webp');

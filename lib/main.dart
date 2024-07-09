@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_tracker/Splash/splashscreen.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Task Tracker',
       debugShowCheckedModeBanner: false,
       home: Splash(),
+
     );
   }
 }
