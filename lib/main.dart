@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_tracker/Splash/splashscreen.dart';
+import 'package:task_tracker/bottomnavbar.dart';
+import 'package:task_tracker/login.dart';
+import 'package:task_tracker/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +11,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+ 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Task Tracker',
-      debugShowCheckedModeBanner: false,
-      home: Splash(),
-
+     debugShowCheckedModeBanner: false,
+      
+     home: 
+     //BottomBarPage(),
+     SplashScreen(),
+     //LoginPage(),
     );
   }
 }
+
