@@ -1,18 +1,12 @@
 
-
-//working
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_tracker/controllers/bottomcontroller.dart';
-import 'package:task_tracker/utils/apputils.dart';
-import 'package:task_tracker/view/createtask.dart';
-import 'package:task_tracker/view/mytask.dart';
-import 'package:task_tracker/view/profile.dart';
-import 'package:task_tracker/view/report.dart';
-
-
+import 'package:task_tracker_app/controllers/bottomcontroller.dart';
+import 'package:task_tracker_app/utils/apputils.dart';
+import 'package:task_tracker_app/view/createtask.dart';
+import 'package:task_tracker_app/view/mytask.dart';
+import 'package:task_tracker_app/view/profile.dart';
+import 'package:task_tracker_app/view/report.dart';
 
 class BottomNavScreen extends StatelessWidget {
   final BottomNavController controller = Get.put(BottomNavController());
@@ -25,15 +19,11 @@ class BottomNavScreen extends StatelessWidget {
         body: Obx(() {
           return IndexedStack(
             index: controller.selectedIndex.value,
-            children: const [
-            
-              Mytask(),
-              Createtask(),
-              Report(),
+            children: [
+               MyTask(),
+               CreateTaskPage(),
+               ReportPage(),
               Profile(),
-            
-
-              
             ],
           );
         }),
@@ -45,15 +35,16 @@ class BottomNavScreen extends StatelessWidget {
             onTap: controller.changeTabIndex,
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.white, // Selected icon and label color
-            unselectedItemColor: Colors.white, // Unselected icon and label color
+            unselectedItemColor:
+                Colors.white, // Unselected icon and label color
             showUnselectedLabels: true,
             backgroundColor: AppColors.normal,
             items: [
               BottomNavigationBarItem(
-              icon: AppIcons.myTask,
-              //Image.asset('MyTask.png', width: 24, height: 24,color: Colors.white,),
-              //  icon: Icon(Icons.home),
-               // activeIcon: const Icon(Icons.home, color: Colors.blue),
+                icon: AppIcons.myTask,
+                //Image.asset('MyTask.png', width: 24, height: 24,color: Colors.white,),
+                //  icon: Icon(Icons.home),
+                // activeIcon: const Icon(Icons.home, color: Colors.blue),
                 label: 'My Task',
               ),
               BottomNavigationBarItem(
@@ -61,17 +52,16 @@ class BottomNavScreen extends StatelessWidget {
                 //activeIcon: Icon(Icons.search, color: Colors.blue),
                 label: 'Create Task',
               ),
-               BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: AppIcons.report,
-               // activeIcon: Icon(Icons.play_circle_fill, color: Colors.blue),
+                // activeIcon: Icon(Icons.play_circle_fill, color: Colors.blue),
                 label: 'Report',
               ),
-               BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: AppIcons.profile,
-               // activeIcon: Icon(Icons.chat, color: Colors.blue),
+                // activeIcon: Icon(Icons.chat, color: Colors.blue),
                 label: 'Profile',
               ),
-            
             ],
           ),
         ),
@@ -79,4 +69,3 @@ class BottomNavScreen extends StatelessWidget {
     );
   }
 }
-

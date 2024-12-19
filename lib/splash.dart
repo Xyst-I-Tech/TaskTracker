@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_tracker/controllers/splashcontroller.dart';
-
+import 'package:task_tracker_app/controllers/splashcontroller.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen ({super.key});
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-   Get.put(Splashcontroller());
+    Get.put(Splashcontroller());
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -20,18 +19,18 @@ class SplashScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/Logo.webp', 
-              
+              'assets/Logo.webp',
+
               // width: 120,
               // height: 120,
             ),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Task Tracker',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color:Color(0xFF58A396), 
+                color: Color(0xFF58A396),
                 fontFamily: 'Roboto',
               ),
             ),
